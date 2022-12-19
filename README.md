@@ -12,8 +12,10 @@
    - OR - **src/test/resources/db/fill-db.sql  -** to populate the database with test data;
 
 9. Use page http://localhost:8080/swagger-ui/#/product-controller   
-   to view **_product-service_** API
-10. Before run **Tests**, docker must be installed and running (tests works with testcontainers)
+   to view **_product-service_** API 
    
+10. Before run **Tests**, docker must be installed and running (tests works with testcontainers)
+11. Before run Application or Tests set parameter _"page.size"_ in properties respectively
+      - **db.query.page-size: 10** 
 
 
