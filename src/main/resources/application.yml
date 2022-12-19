@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  tomcat:
+    relaxed-query-chars: <,>,|,[,\,],^,`,{,}
+logging:
+  pattern.console: '%d{HH:mm:ss.SSS} %-5p [%t] - (%-40(%file:%L%prefix(\))) - [%-30M] --- %m%n'
+  file.path: logs
+  level:
+    root: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+spring:
+  main.banner-mode: 'off'
+  mvc:
+    format.date: iso
+    hiddenmethod.filter.enabled: true
+    pathmatch.matching-strategy: ant_path_matcher
+  jpa:
+    open-in-view: true
+    hibernate.ddl-auto: none
+    properties:
+      hibernate:
+        use_sql: true
+        show_sql: true
+        format_sql: true
+        order_inserts: true
+        order_updates: true
+        jdbc.batch_size: 20
+        jdbc.fetch_size: 20
+        default_batch_fetch_size: 20
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres?currentSchema=product_service_schema
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    type: org.springframework.jdbc.datasource.DriverManagerDataSource
+
+db.query.page-size: 100
