@@ -16,6 +16,6 @@
    
 10. Before run **Tests**, docker must be installed and running (tests works with testcontainers)
 11. Before run Application or Tests set parameter _"page.size"_ in properties respectively
-      - **db.query.page-size: 10** 
+      - **db.query.page-size: ...** (min=1, max = 100000)
 
 
